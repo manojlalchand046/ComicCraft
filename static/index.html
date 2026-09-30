@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ComicCraft - AI Comic Generator</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <main class="container">
+        <header class="header">
+            <div class="header-content">
+                <p class="eyebrow">✨ COMICCRAFT AI ✨</p>
+                <h1>Turn Your Story Into a <span class="highlight">Comic</span></h1>
+                <p class="subtitle">Create amazing 5-panel comics with AI-generated dialogue and illustrations</p>
+            </div>
+        </header>
+
+        <section class="form-section">
+            <form id="comic-form" class="comic-form">
+                <div class="form-group">
+                    <label for="title" class="label">Comic Title *</label>
+                    <input 
+                        type="text" 
+                        id="title" 
+                        name="title" 
+                        required 
+                        minlength="3" 
+                        maxlength="100" 
+                        placeholder="e.g., The Midnight Adventure"
+                        class="input"
+                    >
+                    <small>3-100 characters</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="description" class="label">Story Idea *</label>
+                    <textarea 
+                        id="description" 
+                        name="description" 
+                        required 
+                        minlength="10" 
+                        maxlength="1000" 
+                        rows="5"
+                        placeholder="Describe your story idea. What happens? Who are the characters? What's the conflict?"
+                        class="textarea"
+                    ></textarea>
+                    <small>10-1000 characters</small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="style" class="label">Art Style *</label>
+                        <select id="style" name="style" class="select" required>
+                            <option value="cartoon">🎨 Cartoon</option>
+                            <option value="comic_book">💥 Comic Book</option>
+                            <option value="anime">🌸 Anime</option>
+                            <option value="realistic">📸 Realistic</option>
+                            <option value="watercolor">🎭 Watercolor</option>
+                            <option value="digital_art">💻 Digital Art</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tone" class="label">Story Tone *</label>
+                        <select id="tone" name="tone" class="select" required>
+                            <option value="humorous">😄 Humorous</option>
+                            <option value="adventure">⚔️ Adventure</option>
+                            <option value="action">💪 Action</option>
+                            <option value="dramatic">🎭 Dramatic</option>
+                            <option value="mystery">🔍 Mystery</option>
+                            <option value="romantic">💕 Romantic</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="characters" class="label">Characters (Optional)</label>
+                    <input 
+                        type="text" 
+                        id="characters" 
+                        name="characters" 
+                        placeholder="e.g., Alice, Bob, Mr. Smith (comma-separated)"
+                        class="input"
+                    >
+                </div>
+
+                <button type="submit" id="submit-btn" class="submit-btn">
+                    <span>Generate My Comic</span>
+                    <span class="arrow">→</span>
+                </button>
+            </form>
+
+            <div id="status" class="status-message" role="status"></div>
+        </section>
+
+        <section id="result" class="result-section" hidden>
+            <div id="result-content"></div>
+        </section>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
